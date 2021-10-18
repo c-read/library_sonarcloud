@@ -101,7 +101,7 @@ public class Library
     {
 
 
-        Book book2 = new Book("Sapiens",14,"non-fiction",new ArrayList<>(List.of("Yuval Noah Harari")),400);
+        /*Book book2 = new Book("Sapiens",14,"non-fiction",new ArrayList<>(List.of("Yuval Noah Harari")),400);
         itemsInLibrary.add(book2);
         book2.loan();
 
@@ -124,7 +124,7 @@ public class Library
             System.out.print(item.getClass().getSimpleName() + "  ");
             System.out.print(item.getGenre() + " ");
             System.out.println();
-        }
+        }*/
         return "library";
 
     }
