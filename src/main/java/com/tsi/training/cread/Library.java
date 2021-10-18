@@ -52,19 +52,19 @@ public class Library
         return "";
     }
 
-    public static String loanItem(Item newitem)
+    public static String loanItem(String itemname)
     {
         for (Item item : itemsInLibrary)
         {
-            if((newitem.toString().equals(item.getName())) && item instanceof Book book)
+            if((itemname.equals(item.getName())) && item instanceof Book)
             {
-                book = (Book) item;
+                Book book = (Book) item;
                 book.loan();
                 booksOnLoan.add(book);
             }
-            if(newitem.toString().equals(item.getName()) && item instanceof AudioBook audioBook)
+            if(itemname.equals(item.getName()) && item instanceof AudioBook)
             {
-                audioBook = (AudioBook) item;
+                AudioBook audioBook = (AudioBook) item;
                 audioBook.loan();
             }
             else
@@ -75,19 +75,19 @@ public class Library
         return "";
     }
 
-    public static String returnItem(Item newitem)
+    public static String returnItem(String itemName)
     {
         for (Item item : itemsInLibrary)
         {
-            if(newitem.toString().equals(item.getName()) && item instanceof Book book)
+            if(itemName.equals(item.getName()) && item instanceof Book)
             {
-                book = (Book) item;
+                Book book = (Book) item;
                 book.returnToLibrary();
                 booksOnLoan.remove(book);
             }
-            if(newitem.toString().equals(item.getName()) && item instanceof AudioBook audioBook)
+            if(itemName.equals(item.getName()) && item instanceof AudioBook)
             {
-                audioBook = (AudioBook) item;
+                AudioBook audioBook = (AudioBook) item;
                 audioBook.returnToLibrary();
             }
             else
