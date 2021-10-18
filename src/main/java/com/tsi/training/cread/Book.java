@@ -26,9 +26,11 @@ public class Book extends Item implements IBorrowable
     }
 
 
-    public void view()
+    public String view()
     {
-        System.out.println("reading book");
+        String message = "reading book";
+        System.out.println(message);
+        return message;
     }
 
     @Override

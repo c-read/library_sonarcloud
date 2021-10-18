@@ -24,9 +24,11 @@ public class AudioBook extends Item implements IBorrowable
         super(name,id,genre,authors);
         this.sizeMb = sizeMb;
     }
-    public void view()
+    public String view()
     {
-        System.out.println("listening to audiobook");
+        String message = "listening to audiobook";
+        System.out.println(message);
+        return message;
     }
 
 

@@ -35,6 +35,12 @@ public class BookTest
         assertEquals("message",600,book.getLength());
     }
     @Test
+    public void testBookViewMethod()
+    {
+        Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
+        assertEquals("failed to return","reading book",book.view());
+    }
+    @Test
     public void testBookloanmethod()
     {
         Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
@@ -47,12 +53,7 @@ public class BookTest
         assertEquals("failed to return","returning to library",book.returnToLibrary());
     }
 
-    @Test
-    public void testAudioBookloanmethod()
-    {
-        AudioBook audioBook = new AudioBook("Captain Underpants", 4,"fiction",new ArrayList<>(List.of("na")),100);
-        assertEquals("message","audiobook has been downloaded",audioBook.loan());
-    }
+
     @Test
     public void testAudioBookGetNameMethod()
     {
@@ -76,6 +77,18 @@ public class BookTest
     {
         AudioBook audioBook = new AudioBook("Captain Underpants", 4,"fiction",new ArrayList<>(List.of("na")),100);
         assertEquals("message",100,audioBook.getSizeMb());
+    }
+    @Test
+    public void testAudioBookViewMethod()
+    {
+        AudioBook audioBook = new AudioBook("Captain Underpants", 4,"fiction",new ArrayList<>(List.of("na")),100);
+        assertEquals("failed to return","listening to audiobook",audioBook.view());
+    }
+    @Test
+    public void testAudioBookloanmethod()
+    {
+        AudioBook audioBook = new AudioBook("Captain Underpants", 4,"fiction",new ArrayList<>(List.of("na")),100);
+        assertEquals("message","audiobook has been downloaded",audioBook.loan());
     }
     @Test
     public void testAudioBookreturnmethod()

@@ -36,7 +36,7 @@ public abstract class Item
 
     /*methods*/
 
-    public abstract void view();
+    public abstract String view();
 
 
 
