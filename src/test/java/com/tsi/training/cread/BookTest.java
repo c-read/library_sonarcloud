@@ -18,27 +18,27 @@ public class BookTest
     @Test
     public void testBookGetNameMethod()
     {
-        Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
+        Book book = new Book("Enlightenment", 24);
         assertEquals("message","Enlightenment",book.getName());
     }
 
     @Test
     public void testBookGetIdMethod()
     {
-        Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
+        Book book = new Book("Enlightenment", 24,"non-fiction");
         assertEquals("message",24,book.getId());
     }
     @Test
     public void testBookGetGenreMethod()
     {
-        Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
+        Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")));
         assertEquals("failed to get genre","non-fiction",book.getGenre());
     }
     @Test
     public void testGetAuthorsMethod()
     {
         ArrayList<String> authors = new ArrayList<>(List.of("Roy Porter"));
-        Book book = new Book("Enlightenment", 24,"non-fiction",authors,600);
+        Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
         assertEquals("failed to return",authors,book.getAuthors());
     }
     @Test
@@ -70,26 +70,26 @@ public class BookTest
     @Test
     public void testAudioBookGetNameMethod()
     {
-        AudioBook audioBook = new AudioBook("Captain Underpants", 4,"fiction",new ArrayList<>(List.of("na")),100);
+        AudioBook audioBook = new AudioBook("Captain Underpants", 4);
         assertEquals("message","Captain Underpants",audioBook.getName());
     }
     @Test
     public void testAudioBookGetIdMethod()
     {
-        AudioBook audioBook = new AudioBook("Captain Underpants", 4,"fiction",new ArrayList<>(List.of("na")),100);
+        AudioBook audioBook = new AudioBook("Captain Underpants", 4,"fiction");
         assertEquals("message",4,audioBook.getId());
     }
     @Test
     public void testAudioBookGetGenreMethod()
     {
-        AudioBook audioBook = new AudioBook("Captain Underpants", 4,"fiction",new ArrayList<>(List.of("na")),100);
+        AudioBook audioBook = new AudioBook("Captain Underpants", 4,"fiction");
         assertEquals("message","fiction",audioBook.getGenre());
     }
     @Test
     public void testGetABAuthorsMethod()
     {
         ArrayList<String> authors = new ArrayList<>(List.of("na"));
-        Book book = new Book("Enlightenment", 24,"non-fiction",authors,600);
+        Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("na")));
         assertEquals("failed to return",authors,book.getAuthors());
     }
     @Test
@@ -105,13 +105,13 @@ public class BookTest
         assertEquals("failed to return","listening to audiobook",audioBook.view());
     }
     @Test
-    public void testAudioBookloanmethod()
+    public void testAudioBookLoanMethod()
     {
         AudioBook audioBook = new AudioBook("Captain Underpants", 4,"fiction",new ArrayList<>(List.of("na")),100);
         assertEquals("message","audiobook has been downloaded",audioBook.loan());
     }
     @Test
-    public void testAudioBookreturnmethod()
+    public void testAudioBookReturnMethod()
     {
         AudioBook audioBook = new AudioBook("Captain Underpants", 4,"fiction",new ArrayList<>(List.of("na")),100);
         assertEquals("message","rental over - audiobook is being deleted",audioBook.returnToLibrary());
