@@ -50,13 +50,13 @@ public class Library
     {
         for (Item item : itemsInLibrary)
         {
-            if(newitem.equals(item.getName()) && item.equals(item.getClass().getSimpleName() == "Book"))
+            if((newitem.toString().equals(item.getName())) && item.getClass().getSimpleName() == "Book")
             {
                 Book book = (Book) item;
                 book.loan();
                 booksOnLoan.add(book);
             }
-            if(newitem.equals(item.getName()) && item.equals(item.getClass().getSimpleName() == "AudioBook"))
+            if(newitem.toString().equals(item.getName()) && item.getClass().getSimpleName() == "AudioBook")
             {
                 AudioBook audioBook = (AudioBook) item;
                 audioBook.loan();
