@@ -33,7 +33,7 @@ public class AudioBook extends Item implements IBorrowable
     @Override
     public void loan()
     {
-        System.out.println("audiobook downloaded");
+        System.out.println("audiobook has been downloaded");
     }
 
 
