@@ -20,12 +20,15 @@ public class Library
         {
             System.out.println("no items in library");
         }
-        for (Item item : itemsInLibrary)
+        else
         {
-            System.out.println(item.getName());
-            System.out.print(item.getAuthors());
-            System.out.print(item.getGenre());
-            System.out.print(item.getId());
+            for (Item item : itemsInLibrary)
+            {
+                System.out.println(item.getName());
+                System.out.print(item.getAuthors());
+                System.out.print(item.getGenre());
+                System.out.print(item.getId());
+            }
         }
         return "";
     }
@@ -36,12 +39,15 @@ public class Library
         {
             System.out.println("no items in library");
         }
-        for (Book book : booksOnLoan)
+        else
         {
-            System.out.println(book.getName());
-            System.out.print(book.getAuthors());
-            System.out.print(book.getGenre());
-            System.out.print(book.getId());
+            for (Book book : booksOnLoan)
+            {
+                System.out.println(book.getName());
+                System.out.print(book.getAuthors());
+                System.out.print(book.getGenre());
+                System.out.print(book.getId());
+            }
         }
         return "";
     }
@@ -50,15 +56,15 @@ public class Library
     {
         for (Item item : itemsInLibrary)
         {
-            if((newitem.toString().equals(item.getName())) && item instanceof Book aBook)
+            if((newitem.toString().equals(item.getName())) && item instanceof Book book)
             {
-                Book book = (Book) item;
+                book = (Book) item;
                 book.loan();
                 booksOnLoan.add(book);
             }
-            if(newitem.toString().equals(item.getName()) && item instanceof AudioBook anAudioBook)
+            if(newitem.toString().equals(item.getName()) && item instanceof AudioBook audioBook)
             {
-                AudioBook audioBook = (AudioBook) item;
+                audioBook = (AudioBook) item;
                 audioBook.loan();
             }
             else
@@ -73,15 +79,15 @@ public class Library
     {
         for (Item item : itemsInLibrary)
         {
-            if(newitem.toString().equals(item.getName()) && item instanceof Book aBook)
+            if(newitem.toString().equals(item.getName()) && item instanceof Book book)
             {
-                Book book = (Book) item;
+                book = (Book) item;
                 book.returnToLibrary();
                 booksOnLoan.remove(book);
             }
-            if(newitem.toString().equals(item.getName()) && item instanceof AudioBook anAudioBook)
+            if(newitem.toString().equals(item.getName()) && item instanceof AudioBook audioBook)
             {
-                AudioBook audioBook = (AudioBook) item;
+                audioBook = (AudioBook) item;
                 audioBook.returnToLibrary();
             }
             else
