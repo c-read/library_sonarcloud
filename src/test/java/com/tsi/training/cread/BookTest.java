@@ -122,7 +122,8 @@ public class BookTest
     public void testAddItem()
     {
         Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
-        assertEquals("message", "",Library.addItem(book));
+        ArrayList<Item> itemsInLibrary = new ArrayList<>();
+        assertEquals("message", "",Library.addItem(book,itemsInLibrary));
     }
 
     @Test
@@ -146,7 +147,7 @@ public class BookTest
         ArrayList<Item> itemsInLibrary = new ArrayList<>();
         ArrayList<Book> booksOnLoan = new ArrayList<>();
         itemsInLibrary.add(book);
-        Library.loanItem(book.getName(),itemsInLibrary);
+        Library.loanItem(book.getName(),itemsInLibrary,booksOnLoan);
         assertEquals("message", "",Library.printBooksOnLoan(booksOnLoan));
     }
     @Test
@@ -162,23 +163,26 @@ public class BookTest
     {
         Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
         ArrayList<Item> itemsInLibrary = new ArrayList<>();
+        ArrayList<Book> booksOnLoan = new ArrayList<>();
         itemsInLibrary.add(book);
-        assertEquals("message", "",Library.loanItem(book.getName(),itemsInLibrary));
+        assertEquals("message", "",Library.loanItem(book.getName(),itemsInLibrary,booksOnLoan));
     }
     @Test
     public void testLoanItemAudioBook()
     {
         AudioBook audioBook = new AudioBook("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),100);
         ArrayList<Item> itemsInLibrary = new ArrayList<>();
+        ArrayList<Book> booksOnLoan = new ArrayList<>();
         itemsInLibrary.add(audioBook);
-        assertEquals("message", "",Library.loanItem(audioBook.getName(),itemsInLibrary));
+        assertEquals("message", "",Library.loanItem(audioBook.getName(),itemsInLibrary,booksOnLoan));
     }
     @Test
     public void testLoanItemEmpty()
     {
         AudioBook audioBook = new AudioBook("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
         ArrayList<Item> itemsInLibrary = new ArrayList<>();
-        assertEquals("message","",Library.loanItem(audioBook.getName(),itemsInLibrary));
+        ArrayList<Book> booksOnLoan = new ArrayList<>();
+        assertEquals("message","",Library.loanItem(audioBook.getName(),itemsInLibrary,booksOnLoan));
     }
 
     @Test
@@ -186,23 +190,26 @@ public class BookTest
     {
         Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
         ArrayList<Item> itemsInLibrary = new ArrayList<>();
+        ArrayList<Book> booksOnLoan = new ArrayList<>(0);
         itemsInLibrary.add(book);
-        assertEquals("message", "",Library.returnItem(book.getName(),itemsInLibrary));
+        assertEquals("message", "",Library.returnItem(book.getName(),itemsInLibrary,booksOnLoan));
     }
     @Test
     public void testReturnItemAudioBook()
     {
         AudioBook audioBook = new AudioBook("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
         ArrayList<Item> itemsInLibrary = new ArrayList<>();
+        ArrayList<Book> booksOnLoan = new ArrayList<>();
         itemsInLibrary.add(audioBook);
-        assertEquals("message", "",Library.returnItem(audioBook.getName(),itemsInLibrary));
+        assertEquals("message", "",Library.returnItem(audioBook.getName(),itemsInLibrary,booksOnLoan));
     }
     @Test
     public void testReturnItemEmpty()
     {
         Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
         ArrayList<Item> itemsInLibrary = new ArrayList<>();
-        assertEquals("message", "",Library.returnItem("En",itemsInLibrary));
+        ArrayList<Book> booksOnLoan = new ArrayList<>();
+        assertEquals("message", "",Library.returnItem("En",itemsInLibrary,booksOnLoan));
     }
 
 }

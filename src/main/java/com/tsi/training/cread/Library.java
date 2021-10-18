@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Library
 {
-    static List<Item> itemsInLibrary = new ArrayList<Item>();
-    static List<Book> booksOnLoan = new ArrayList<Book>();
+    /*static List<Item> itemsInLibrary = new ArrayList<Item>();
+    static List<Book> booksOnLoan = new ArrayList<Book>();*/
 
-    public static String addItem(Item item)
+    public static String addItem(Item item, ArrayList<Item> itemsInLibrary)
     {
         itemsInLibrary.add(item);
         return "";
@@ -37,7 +37,7 @@ public class Library
     {
         if (booksOnLoan.isEmpty())
         {
-            System.out.println("no items in library");
+            System.out.println("no books on loan");
         }
         else
         {
@@ -52,7 +52,7 @@ public class Library
         return "";
     }
 
-    public static String loanItem(String itemName, ArrayList<Item> itemInLibrary)
+    public static String loanItem(String itemName, ArrayList<Item> itemsInLibrary, ArrayList<Book> booksOnLoan)
     {
         for (Item item : itemsInLibrary)
         {
@@ -73,7 +73,7 @@ public class Library
         return "";
     }
 
-    public static String returnItem(String itemName,ArrayList<Item> itemInLibrary)
+    public static String returnItem(String itemName,ArrayList<Item> itemsInLibrary, ArrayList<Book> booksOnLoan)
     {
         for (Item item : itemsInLibrary)
         {
