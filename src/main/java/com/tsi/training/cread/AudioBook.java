@@ -31,16 +31,20 @@ public class AudioBook extends Item implements IBorrowable
 
 
     @Override
-    public void loan()
+    public String loan()
     {
-        System.out.println("audiobook has been downloaded");
+        String message = "audiobook has been downloaded";
+        System.out.println(message);
+        return message;
     }
 
 
     @Override
-    public void returnToLibrary()
+    public String returnToLibrary()
     {
-        System.out.println("returning to library");
+        String message = "returning to library";
+        System.out.println(message);
+        return message;
     }
 
     public int getSizeMb()

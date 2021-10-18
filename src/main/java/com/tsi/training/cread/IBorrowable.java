@@ -2,8 +2,8 @@ package com.tsi.training.cread;
 
 public interface IBorrowable
 {
-    void loan();
+    String loan();
 
-    void returnToLibrary();
+    String returnToLibrary();
 
 }

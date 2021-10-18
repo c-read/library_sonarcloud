@@ -32,17 +32,20 @@ public class Book extends Item implements IBorrowable
     }
 
     @Override
-    public void loan()
+    public String loan()
     {
-        System.out.println("borrowing book from library");
+        String message = "borrowing book from library";
+        System.out.println(message);
+        return message;
 
     }
 
     @Override
-    public void returnToLibrary()
+    public String returnToLibrary()
     {
         String message = "returning to library";
         System.out.println(message);
+        return message;
     }
 
     public int getLength()
