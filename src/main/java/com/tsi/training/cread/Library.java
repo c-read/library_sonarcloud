@@ -14,7 +14,7 @@ public class Library
         return "";
     }
 
-    public static String printItemsInLibrary()
+    public static String printItemsInLibrary(ArrayList<Item> itemsInLibrary)
     {
         if (itemsInLibrary.isEmpty())
         {
@@ -33,7 +33,7 @@ public class Library
         return "";
     }
 
-    public static String printBooksOnLoan()
+    public static String printBooksOnLoan(ArrayList<Book> booksOnLoan)
     {
         if (booksOnLoan.isEmpty())
         {
