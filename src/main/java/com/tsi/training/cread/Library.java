@@ -69,7 +69,7 @@ public class Library
         return "";
     }
 
-    public String returnItem(Item newitem)
+    public static String returnItem(Item newitem)
     {
         for (Item item : itemsInLibrary)
         {
