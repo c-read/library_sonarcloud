@@ -39,45 +39,24 @@ public abstract class Item
     public abstract String view();
 
 
-
-
     public int getId()
     {
         return id;
     }
-    public void setId(int id)
-    {
-        this.id = id;
-    }
-
 
     public String getName()
     {
         return name;
     }
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
 
     public String getGenre()
     {
         return genre;
     }
-    public void setGenre(String genre)
-    {
-        this.genre = genre;
-    }
-
 
     public ArrayList<String> getAuthors()
     {
         return authors;
-    }
-    public void setAuthors(ArrayList<String> authors)
-    {
-        this.authors = authors;
     }
 
 

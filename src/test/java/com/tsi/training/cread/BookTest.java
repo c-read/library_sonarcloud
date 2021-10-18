@@ -16,6 +16,7 @@ public class BookTest
         Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
         assertEquals("message","Enlightenment",book.getName());
     }
+
     @Test
     public void testBookGetIdMethod()
     {
@@ -27,6 +28,13 @@ public class BookTest
     {
         Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
         assertEquals("failed to get genre","non-fiction",book.getGenre());
+    }
+    @Test
+    public void testGetAuthorsMethod()
+    {
+        ArrayList<String> authors = new ArrayList<>(List.of("Roy Porter"));
+        Book book = new Book("Enlightenment", 24,"non-fiction",authors,600);
+        assertEquals("failed to return",authors,book.getAuthors());
     }
     @Test
     public void testBookGetLengthMethod()
@@ -71,6 +79,13 @@ public class BookTest
     {
         AudioBook audioBook = new AudioBook("Captain Underpants", 4,"fiction",new ArrayList<>(List.of("na")),100);
         assertEquals("message","fiction",audioBook.getGenre());
+    }
+    @Test
+    public void testGetABAuthorsMethod()
+    {
+        ArrayList<String> authors = new ArrayList<>(List.of("na"));
+        Book book = new Book("Enlightenment", 24,"non-fiction",authors,600);
+        assertEquals("failed to return",authors,book.getAuthors());
     }
     @Test
     public void testAudioBookGetSizeMbMethod()

@@ -53,9 +53,5 @@ public class AudioBook extends Item implements IBorrowable
     {
         return sizeMb;
     }
-    public void setSizeMb(int size)
-    {
-        this.sizeMb = sizeMb;
-    }
 
 }

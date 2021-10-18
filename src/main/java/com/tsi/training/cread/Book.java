@@ -54,8 +54,4 @@ public class Book extends Item implements IBorrowable
     {
         return length;
     }
-    public void setLength(int length)
-    {
-        this.length = length;
-    }
 }
