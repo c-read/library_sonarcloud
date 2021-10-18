@@ -34,7 +34,7 @@ public class Book extends Item implements IBorrowable
     @Override
     public void loan()
     {
-        System.out.println("borrowing book");
+        System.out.println("borrowing book from library");
 
     }
 
