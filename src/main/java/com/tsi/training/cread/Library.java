@@ -8,13 +8,13 @@ public class Library
     /*static List<Item> itemsInLibrary = new ArrayList<Item>();
     static List<Book> booksOnLoan = new ArrayList<Book>();*/
 
-    public static String addItem(Item item, ArrayList<Item> itemsInLibrary)
+    public static String addItem(Item item, List<Item> itemsInLibrary)
     {
         itemsInLibrary.add(item);
         return "";
     }
 
-    public static String printItemsInLibrary(ArrayList<Item> itemsInLibrary)
+    public static String printItemsInLibrary(List<Item> itemsInLibrary)
     {
         if (itemsInLibrary.isEmpty())
         {
@@ -33,7 +33,7 @@ public class Library
         return "";
     }
 
-    public static String printBooksOnLoan(ArrayList<Book> booksOnLoan)
+    public static String printBooksOnLoan(List<Book> booksOnLoan)
     {
         if (booksOnLoan.isEmpty())
         {
@@ -52,7 +52,7 @@ public class Library
         return "";
     }
 
-    public static String loanItem(String itemName, ArrayList<Item> itemsInLibrary, ArrayList<Book> booksOnLoan)
+    public static String loanItem(String itemName, List<Item> itemsInLibrary, List<Book> booksOnLoan)
     {
         for (Item item : itemsInLibrary)
         {
@@ -73,7 +73,7 @@ public class Library
         return "";
     }
 
-    public static String returnItem(String itemName,ArrayList<Item> itemsInLibrary, ArrayList<Book> booksOnLoan)
+    public static String returnItem(String itemName,List<Item> itemsInLibrary, List<Book> booksOnLoan)
     {
         for (Item item : itemsInLibrary)
         {

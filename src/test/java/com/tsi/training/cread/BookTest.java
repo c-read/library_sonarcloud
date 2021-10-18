@@ -86,11 +86,11 @@ public class BookTest
         assertEquals("message","fiction",audioBook.getGenre());
     }
     @Test
-    public void testGetABAuthorsMethod()
+    public void testAudioBookGetAuthorsMethod()
     {
         ArrayList<String> authors = new ArrayList<>(List.of("na"));
-        Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("na")));
-        assertEquals("failed to return",authors,book.getAuthors());
+        AudioBook audioBook = new AudioBook("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("na")));
+        assertEquals("failed to return",authors,audioBook.getAuthors());
     }
     @Test
     public void testAudioBookGetSizeMbMethod()
