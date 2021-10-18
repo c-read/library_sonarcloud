@@ -9,6 +9,11 @@ import static org.junit.Assert.assertEquals;
 
 public class BookTest
 {
+    @Test
+    public void testRunLibraryMethod()
+    {
+        assertEquals("library run failed","library",Library.runLibrary());
+    }
 
     @Test
     public void testBookGetNameMethod()
