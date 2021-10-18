@@ -52,7 +52,7 @@ public class Library
         return "";
     }
 
-    public static String loanItem(String itemName)
+    public static String loanItem(String itemName, ArrayList<Item> itemInLibrary)
     {
         for (Item item : itemsInLibrary)
         {
@@ -73,7 +73,7 @@ public class Library
         return "";
     }
 
-    public static String returnItem(String itemName)
+    public static String returnItem(String itemName,ArrayList<Item> itemInLibrary)
     {
         for (Item item : itemsInLibrary)
         {
