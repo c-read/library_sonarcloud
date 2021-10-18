@@ -28,23 +28,19 @@ public class Book extends Item implements IBorrowable
 
     public String view()
     {
-        String message = "reading book";
-        return message;
+        return "reading book";
     }
 
     @Override
     public String loan()
     {
-        String message = "borrowing book from library";
-        return message;
-
+        return "borrowing book from library";
     }
 
     @Override
     public String returnToLibrary()
     {
-        String message = "returning to library";
-        return message;
+        return "returning to library";
     }
 
     public int getLength()

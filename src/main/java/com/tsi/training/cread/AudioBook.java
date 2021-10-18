@@ -26,24 +26,21 @@ public class AudioBook extends Item implements IBorrowable
     }
     public String view()
     {
-        String message = "listening to audiobook";
-        return message;
+        return "listening to audiobook";
     }
 
 
     @Override
     public String loan()
     {
-        String message = "audiobook has been downloaded";
-        return message;
+        return "audiobook has been downloaded";
     }
 
 
     @Override
     public String returnToLibrary()
     {
-        String message = "returning to library";
-        return message;
+        return "returning to library";
     }
 
     public int getSizeMb()
