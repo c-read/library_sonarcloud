@@ -27,7 +27,6 @@ public class AudioBook extends Item implements IBorrowable
     public String view()
     {
         String message = "listening to audiobook";
-        System.out.println(message);
         return message;
     }
 
@@ -36,7 +35,6 @@ public class AudioBook extends Item implements IBorrowable
     public String loan()
     {
         String message = "audiobook has been downloaded";
-        System.out.println(message);
         return message;
     }
 
@@ -45,7 +43,6 @@ public class AudioBook extends Item implements IBorrowable
     public String returnToLibrary()
     {
         String message = "returning to library";
-        System.out.println(message);
         return message;
     }
 

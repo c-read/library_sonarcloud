@@ -29,7 +29,6 @@ public class Book extends Item implements IBorrowable
     public String view()
     {
         String message = "reading book";
-        System.out.println(message);
         return message;
     }
 
@@ -37,7 +36,6 @@ public class Book extends Item implements IBorrowable
     public String loan()
     {
         String message = "borrowing book from library";
-        System.out.println(message);
         return message;
 
     }
@@ -46,7 +44,6 @@ public class Book extends Item implements IBorrowable
     public String returnToLibrary()
     {
         String message = "returning to library";
-        System.out.println(message);
         return message;
     }
 
