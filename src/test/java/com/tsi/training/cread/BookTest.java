@@ -129,6 +129,7 @@ public class BookTest
     public void testPrintLibraryItems()
     {
         Item book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
+        Library.itemsInLibrary.add(book);
         assertEquals("message", "",Library.printItemsInLibrary());
     }
     @Test
@@ -140,6 +141,8 @@ public class BookTest
     public void testPrintBooksOnLoan()
     {
         Item book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
+        Library.itemsInLibrary.add(book);
+        Library.loanItem(book);
         assertEquals("message", "",Library.printBooksOnLoan());
     }
     @Test
