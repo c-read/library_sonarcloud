@@ -57,7 +57,7 @@ public class BookTest
     public void testBookloanmethod()
     {
         Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
-        assertEquals("message","borrowing book from library",book.loan());
+        assertEquals("message","book has been loaned out",book.loan());
     }
     @Test
     public void testBookreturnmethod()
@@ -114,7 +114,51 @@ public class BookTest
     public void testAudioBookreturnmethod()
     {
         AudioBook audioBook = new AudioBook("Captain Underpants", 4,"fiction",new ArrayList<>(List.of("na")),100);
-        assertEquals("message","returning to library",audioBook.returnToLibrary());
+        assertEquals("message","rental over - audiobook is being deleted",audioBook.returnToLibrary());
 
+    }
+
+    @Test
+    public void testAddItem()
+    {
+        Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
+        assertEquals("message", "",Library.addItem(book));
+    }
+
+    @Test
+    public void testPrintLibraryItems()
+    {
+        Item book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
+        assertEquals("message", "",Library.printItemsInLibrary());
+    }
+    @Test
+    public void testPrintBooksOnLoan()
+    {
+        Item book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
+        assertEquals("message", "",Library.printBooksOnLoan());
+    }
+    @Test
+    public void testLoanItemBook()
+    {
+        Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
+        assertEquals("message", "",Library.loanItem(book));
+    }
+    @Test
+    public void testLoanItemAudioBook()
+    {
+        AudioBook audioBook = new AudioBook("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
+        assertEquals("message", "",Library.loanItem(audioBook));
+    }
+    @Test
+    public void testReturnItemBook()
+    {
+        Book book = new Book("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
+        assertEquals("message", "",Library.loanItem(book));
+    }
+    @Test
+    public void testReturnItemAudioBook()
+    {
+        AudioBook audioBook = new AudioBook("Enlightenment", 24,"non-fiction",new ArrayList<>(List.of("Roy Porter")),600);
+        assertEquals("message", "",Library.loanItem(audioBook));
     }
 }

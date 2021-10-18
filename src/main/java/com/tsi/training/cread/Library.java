@@ -5,9 +5,94 @@ import java.util.List;
 
 public class Library
 {
+    static List<Item> itemsInLibrary = new ArrayList<Item>();
+    static List<Book> booksOnLoan = new ArrayList<Book>();
+
+    public static String addItem(Item item)
+    {
+        itemsInLibrary.add(item);
+        return "";
+    }
+
+    public static String printItemsInLibrary()
+    {
+        if (itemsInLibrary.isEmpty())
+        {
+            System.out.println("no items in library");
+        }
+        for (Item item : itemsInLibrary)
+        {
+            System.out.println(item.getName());
+            System.out.print(item.getAuthors());
+            System.out.print(item.getGenre());
+            System.out.print(item.getId());
+        }
+        return "";
+    }
+
+    public static String printBooksOnLoan()
+    {
+        if (booksOnLoan.isEmpty())
+        {
+            System.out.println("no items in library");
+        }
+        for (Book book : booksOnLoan)
+        {
+            System.out.println(book.getName());
+            System.out.print(book.getAuthors());
+            System.out.print(book.getGenre());
+            System.out.print(book.getId());
+        }
+        return "";
+    }
+
+    public static String loanItem(Item newitem)
+    {
+        for (Item item : itemsInLibrary)
+        {
+            if(newitem.equals(item.getName()) && item.equals(item.getClass().getSimpleName() == "Book"))
+            {
+                Book book = (Book) item;
+                book.loan();
+                booksOnLoan.add(book);
+            }
+            if(newitem.equals(item.getName()) && item.equals(item.getClass().getSimpleName() == "AudioBook"))
+            {
+                AudioBook audioBook = (AudioBook) item;
+                audioBook.loan();
+            }
+            else
+            {
+                System.out.println("item not found");
+            }
+        }
+        return "";
+    }
+
+    public String returnItem(Item newitem)
+    {
+        for (Item item : itemsInLibrary)
+        {
+            if(newitem.equals(item.getName()) && item.equals(item.getClass().getSimpleName() == "Book"))
+            {
+                Book book = (Book) item;
+                book.returnToLibrary();
+                booksOnLoan.remove(book);
+            }
+            if(newitem.equals(item.getName()) && item.equals(item.getClass().getSimpleName() == "AudioBook"))
+            {
+                AudioBook audioBook = (AudioBook) item;
+                audioBook.returnToLibrary();
+            }
+            else
+            {
+                System.out.println("item not found");
+            }
+        }
+        return "";
+    }
     public static String runLibrary()
     {
-        List<Item> itemsInLibrary = new ArrayList<Item>();
 
 
         Book book2 = new Book("Sapiens",14,"non-fiction",new ArrayList<>(List.of("Yuval Noah Harari")),400);
@@ -37,4 +122,6 @@ public class Library
         return "library";
 
     }
+
+
 }

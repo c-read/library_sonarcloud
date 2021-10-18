@@ -31,10 +31,12 @@ public class Book extends Item implements IBorrowable
         return "reading book";
     }
 
+
     @Override
     public String loan()
     {
-        return "borrowing book from library";
+        return "book has been loaned out";
+
     }
 
     @Override
@@ -42,6 +44,7 @@ public class Book extends Item implements IBorrowable
     {
         return "returning to library";
     }
+
 
     public int getLength()
     {

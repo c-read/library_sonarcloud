@@ -40,8 +40,10 @@ public class AudioBook extends Item implements IBorrowable
     @Override
     public String returnToLibrary()
     {
-        return "returning to library";
+        return "rental over - audiobook is being deleted";
     }
+
+
 
     public int getSizeMb()
     {
