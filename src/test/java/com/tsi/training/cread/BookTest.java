@@ -152,7 +152,7 @@ public class BookTest
     @Test
     public void testPrintBooksOnLoanEmpty()
     {
-        ArrayList<Book> booksOnLoan = new ArrayList<>();
+        ArrayList<Book> booksOnLoan = new ArrayList<>(0);
         assertEquals("message","",Library.printBooksOnLoan(booksOnLoan));
     }
 
